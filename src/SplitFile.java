@@ -1,6 +1,4 @@
-/**
- * Created by xigao on 6/20/2016.
- */
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
