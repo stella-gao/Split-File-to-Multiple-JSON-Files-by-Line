@@ -12,10 +12,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
-/**
- * Split File Tools
- * @author xigao
- */
+
 public class SplitFile {
 
 
@@ -35,13 +32,7 @@ public class SplitFile {
         }
     }
 
-    /**
-     * 从指定行数 startRowNumber起，截取 rowNumberSize 行保存到一个单独的文件，命名为 sourceFileName_1.后缀名
-     * @param startRowNumber
-     * @param rowNumberSize
-     * @param dirPath
-     * @param sourceFileName
-     */
+
     public static void splitFile(int startRowNumber, int rowNumberSize,
                                  String dirPath, String sourceFileName) {
 
@@ -67,7 +58,7 @@ public class SplitFile {
         String outputPath = dirPath+realFileName+"_"+serilizeNumber + suffix;
         File outputFile = new File(outputPath);
 
-        while(outputFile.exists()){	//判断分割后的文件是否已经存在
+        while(outputFile.exists()){	
 
             serilizeNumber++;
 
@@ -77,8 +68,8 @@ public class SplitFile {
 
         System.out.println("The File After Split "+outputPath);
 
-        int currentIndex = 0;	//当前的行数
-        int writeNumber = 0;	//已经写出的行数
+        int currentIndex = 0;	
+        int writeNumber = 0;	
 
         InputStream in = null;
         InputStreamReader reader = null;
@@ -90,10 +81,9 @@ public class SplitFile {
 
         try {
             in = new FileInputStream(inputFile);
-            reader = new InputStreamReader(in,"utf-8");//指定编码
+            reader = new InputStreamReader(in,"utf-8");
             br = new BufferedReader(reader);
 
-            //写出
             out = new FileOutputStream(outputFile);
             writer = new OutputStreamWriter(out, "utf-8");
             bw = new BufferedWriter(writer);
